@@ -34,11 +34,5 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
     </form>
   );
 };
-// function Form() {
-//     return (
-//         <div>
-//         </div>
-//     )
-// }
 
 export default Form;
