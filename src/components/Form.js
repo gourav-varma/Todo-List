@@ -7,7 +7,7 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
   };
   const submitTodoHandler = (e) => {
     e.preventDefault();
-    if(inputText.trim() === "") return;
+    if (inputText.trim() === "") return;
     setTodos([
       ...todos,
       { text: inputText.trim(), completed: false, id: Math.random() * 1000 },
@@ -17,13 +17,24 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
   const statusHandler = (e) => {
     // "e" comes from the <select> tag in the html
     setStatus(e.target.value);
-  }
+  };
   return (
     <form>
-      <input onChange={inputTextHandler} value={inputText} type="text" className="todo-input" />
-      <button onClick={submitTodoHandler} className="todo-button" type="submit">
-        <i className="fas fa-plus-square"></i>
-      </button>
+      <div className="input-wrapper">
+        <input
+          onChange={inputTextHandler}
+          value={inputText}
+          type="text"
+          className="todo-input"
+        />
+        <button
+          onClick={submitTodoHandler}
+          className="todo-button"
+          type="submit"
+        >
+          <i className="fas fa-plus-square"></i>
+        </button>
+      </div>
       <div className="select">
         <select onChange={statusHandler} name="todos" className="filter-todo">
           <option value="all">All</option>
